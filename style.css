@@ -1,0 +1,207 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*---color---*/
+    --clr-bckg: #0A0C1C;
+    --clr-ccbckg: #1B1937;
+    --clr-img: hsl(277, 64%, 61%, 0.6);
+    --clr-font: hsl(277, 64%, 61%);
+    --clr-white: hsl(0, 100%, 100%);
+
+    /*---Border Radius---*/
+    --radius: 0.5rem;
+    --radius-top: var(--radius) var(--radius) 0 0;
+    --radius-bottom: 0 0 var(--radius) var(--radius);
+    --radius-left: var(--radius) 0 0 var(--radius);
+    --radius-right: 0 var(--radius) var(--radius) 0;
+
+    /*---Spacing---*/
+    --spacing-400: 2rem;
+    --spacing-380: 1.953125rem;
+    --spacing-500: 2.5rem;
+    --spacing-100: 0.5rem;
+    --spacing-88: 5.5rem;
+    --spacing-tab: 4rem;
+    --spacing-tabrl: 5.015625rem;
+    --spacing-tabh1: 1.5rem;
+    --spacing-tabp: 4.5rem;
+    --spacing-tabpr: 1.84375rem;
+    
+    /*---Tipography---*/
+    --font-bold1: 2.25rem;
+    --font-bold2: 1.75rem;
+    --font-bold3: 1.5rem;
+    --font-regular: 0.9375rem;
+    --font-regular-lex: 0.75rem;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: var(--clr-bckg);
+    font-family: "Inter", sans-serif;
+}
+
+.card-container{
+    max-width: 20.4375rem;
+    width: 87.2%;
+    background-color: var(--clr-ccbckg);
+    margin-inline: auto;
+    border-radius: var(--radius-bottom);
+    margin-block: var(--spacing-88);
+}
+
+.card-img {
+  position: relative;
+}
+
+.card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-top);
+}
+
+/* A lilás overlay */
+.card-img::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* minden irányba 0 — kitölti a teljes képet */
+  background-color: var(--clr-img); /* lilás áttetsző */
+  border-radius: var(--radius-top); /* illeszkedjen a képhez */
+}
+
+.card-text-stats-container{
+    padding: var(--spacing-400) var(--spacing-380);
+}
+
+h1{
+  font-size: var(--font-bold2);
+  color: var(--clr-white);
+  line-height: 1.25;
+  margin-bottom: var(--spacing-100);
+}
+
+h1 span{
+  color: var(--clr-font);
+}
+
+.card-description{
+  font-size: var(--font-regular);
+  opacity: 0.75;
+  color: var(--clr-white);
+  line-height: 1.65;
+  margin-bottom: var(--spacing-500);
+}
+
+.card-stats{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+.card-stats .stat{
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number{
+  color: var(--clr-white);
+  font-size: var(--font-bold3);
+  line-height: 1.2;
+}
+
+.stat-label{
+  font-size: var(--font-regular-lex);
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--clr-white);
+  opacity: 0.6;
+  line-height: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.0625em;
+}
+
+.stat{
+  height: 3.3125rem;
+}
+
+/*---TABLET---*/
+@media screen and (min-width: 560px){
+  .card-text-stats-container{
+    padding: var(--spacing-tab) var(--spacing-tabrl);
+    text-align: left;
+  }
+
+  .card-container{
+    max-width: 35.25rem;
+    width: 73.4375%;
+  }
+
+  h1{
+  font-size: var(--font-bold1);
+  margin-bottom: var(--spacing-tabh1);
+  padding-left: 0;
+  }
+
+  .card-description{
+    width: 23.375rem;
+    padding-right: var(--spacing-tabpr);
+    margin-bottom: var(--spacing-tabp);
+  }
+
+  .card-stats{
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-tab);
+  }
+}
+
+/*---Desktop---*/
+@media screen and (min-width: 1440px){
+  body {
+    text-align: left;
+  }
+
+  .card-container {
+    max-width: 69.375rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: var(--radius);
+    margin-block: 0;
+  }
+
+  /* sorrend */
+  .card-text-stats-container {
+    order: 1;
+    width: 50%;
+    padding: 4rem 4rem; /* szimmetrikus padding */
+  }
+
+  .card-img {
+    order: 2;
+    width: 50%;
+  }
+
+  .card-img img,
+  .card-img::after {
+    border-radius: 0; /* fontos */
+    height: 100%;
+  }
+
+  /* stats sorban */
+  .card-stats {
+    flex-direction: row;
+    gap: 4.5rem;
+  }
+}

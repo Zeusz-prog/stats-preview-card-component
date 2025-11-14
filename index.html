@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="card-container">
+    <div class="card-img">
+      <picture>
+      <source srcset="images/image-header-desktop.jpg" media="(min-width:768px)">
+      <img src="images/image-header-mobile.jpg" alt="Office workers collaborating">
+      </picture>
+    </div>
+    <div class="card-text-stats-container">
+      <div class="card-text-content">
+        <h1>Get <span class="highlight">insights</span> that help your business grow.</h1>
+        <p class="card-description">
+          Discover the benefits of data analytics and make better decisions regarding revenue, customer 
+          experience, and overall efficiency.</p>
+      </div>
+      <div class="card-stats">
+        <div class="stat">
+          <strong class="stat-number" aria-label="10 thousand plus companies">10k+</strong>
+          <span class="stat-label">companies</span>
+        </div>
+        <div class="stat">
+          <strong class="stat-number" aria-label="three hundred and fourteen templates">314</strong>
+          <span class="stat-label">templates</span>
+        </div>
+        <div class="stat">
+          <strong class="stat-number" aria-label="12 million plus queries">12m+</strong>
+          <span class="stat-label">queries</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Gabor Feher</a>.
+  </div>
+</body>
+</html>
